@@ -3,12 +3,12 @@ public static void SaveSentMailToSentFloder(MimeMessage msg)
         {
             ImapClient client = new ImapClient();
             
-            client.Connect(Form1.SMTPServer, Form1.ReceivePort,SecureSocketOptions.None);
+            client.Connect("Server", "Port",SecureSocketOptions.None);
             
             client.AuthenticationMechanisms.Remove("XOAUTH2");
-            client.Authenticate(Form1.IMAPAccount, Form1.IMAPPWD);
+            client.Authenticate("Account", "PWD");
             
-            //获取所有文件夹
+            //get all folders
             //List<IMailFolder> mailFolderList = client.GetFolders(client.PersonalNamespaces[0]).ToList();
             IMailFolder folder;
             if ((client.Capabilities & (ImapCapabilities.SpecialUse | ImapCapabilities.XList)) != 0)
