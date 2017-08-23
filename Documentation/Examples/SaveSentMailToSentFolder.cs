@@ -1,5 +1,5 @@
 //Thanks to jstedfast 
-public static void SaveSentMailToSentFloder(MimeMessage msg) 
+public static void SaveSentMailToSentFolder(MimeMessage msg) 
         {
             ImapClient client = new ImapClient();
             
